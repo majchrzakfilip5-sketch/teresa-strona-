@@ -102,7 +102,7 @@ function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 md:grid-cols-[1.05fr_0.95fr]">
         <motion.div {...enter(0)}>
           <h1 className="max-w-xl text-[37px] font-extrabold leading-[1.06] tracking-[-0.02em] md:text-[51px]">
-            Teresa pomoże Twoim rodzicom, gdy Ty <span className="text-teal-deep">nie możesz odebrać.</span>
+            Teresa pomoże Twoim bliskim, gdy Ty <span className="text-teal-deep">nie możesz odebrać.</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-ink/75">
             Mama dzwoni trzeci raz tego dnia, bo zniknęła jej ikona galerii.
