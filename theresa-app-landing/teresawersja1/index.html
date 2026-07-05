@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f3ee">
+  <meta name="description" content="Teresa to spokojny AI-przewodnik po telefonie dla osób starszych. Pomaga korzystać ze smartfona krok po kroku, prostym językiem, bez przejmowania kontroli nad telefonem.">
+  <meta name="keywords" content="aplikacja dla seniorów, AI dla seniorów, pomoc w obsłudze telefonu, przewodnik po smartfonie, cyfrowa samodzielność seniorów">
+  <meta property="og:title" content="Teresa: AI-przewodnik po telefonie dla seniorów">
+  <meta property="og:description" content="Powiedz, co chcesz zrobić. Teresa pokaże Ci krok po kroku.">
+  <meta property="og:type" content="website">
+  <title>Teresa: AI-przewodnik po telefonie dla seniorów</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Literata:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-alert-circle" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12l14 0"/><path d="M13 18l6 -6"/><path d="M13 6l6 6"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6l6 -6"/></symbol>
+    <symbol id="i-credit-card-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M9 5h9a3 3 0 0 1 3 3v8a3 3 0 0 1 -.128 .87"/><path d="M18.87 18.872a3 3 0 0 1 -.87 .128h-12a3 3 0 0 1 -3 -3v-8c0 -1.352 .894 -2.495 2.124 -2.87"/><path d="M3 11l8 0"/><path d="M15 11l6 0"/><path d="M7 15l.01 0"/><path d="M11 15l2 0"/></symbol>
+    <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/><path d="M9 9l1 0"/><path d="M9 13l6 0"/><path d="M9 17l6 0"/></symbol>
+    <symbol id="i-hand-click" viewBox="0 0 24 24"><path d="M8 13v-8.5a1.5 1.5 0 0 1 3 0v7.5"/><path d="M11 11.5v-2a1.5 1.5 0 0 1 3 0v2.5"/><path d="M14 10.5a1.5 1.5 0 0 1 3 0v1.5"/><path d="M17 11.5a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7l-.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"/><path d="M5 3l-1 -1"/><path d="M4 7h-1"/><path d="M14 3l1 -1"/><path d="M15 6h1"/></symbol>
+    <symbol id="i-hand-stop" viewBox="0 0 24 24"><path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5"/><path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5"/><path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5"/><path d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47"/></symbol>
+    <symbol id="i-heart-handshake" viewBox="0 0 24 24"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/><path d="M12 6l-3.293 3.293a1 1 0 0 0 0 1.414l.543 .543c.69 .69 1.81 .69 2.5 0l1 -1a3.182 3.182 0 0 1 4.5 0l2.25 2.25"/><path d="M12.5 15.5l2 2"/><path d="M15 13l2 2"/></symbol>
+    <symbol id="i-help-circle" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 16v.01"/><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z"/><path d="M15 9h.01"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"/><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"/><path d="M8 11v-4a4 4 0 1 1 8 0v4"/></symbol>
+    <symbol id="i-microphone" viewBox="0 0 24 24"><path d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M8 21l8 0"/><path d="M12 17l0 4"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><path d="M15 8h.01"/><path d="M3 6a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v12a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-12z"/><path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l5 5"/><path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l3 3"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/></symbol>
+    <symbol id="i-typography" viewBox="0 0 24 24"><path d="M4 20l3 0"/><path d="M14 20l7 0"/><path d="M6.9 15l6.9 0"/><path d="M10.2 6.3l5.8 13.7"/><path d="M5 20l6 -16l2 0l7 16"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Teresa, strona główna">
+        <img class="brand-mark" src="assets/logo-teresa.png" alt="">
+        <span>Teresa</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Główna nawigacja">
+        <a href="#jak-dziala">Jak działa</a>
+        <a href="#bezpieczenstwo">Bezpieczeństwo</a>
+        <a href="#dla-rodzin">Dla rodzin</a>
+        <a href="cennik.html">Cennik</a>
+        <a href="#pytania">Częste pytania</a>
+      </nav>
+      <a class="button button-small button-dark desktop-cta" href="#dolacz">Dołącz do listy</a>
+      <button class="menu-button" type="button" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" aria-hidden="true">
+      <a href="#jak-dziala">Jak działa</a>
+      <a href="#bezpieczenstwo">Bezpieczeństwo</a>
+      <a href="#dla-rodzin">Dla rodzin</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="#pytania">Częste pytania</a>
+      <a class="button button-dark" href="#dolacz">Dołącz do listy</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="scroll-sentinel" aria-hidden="true"></div>
+
+    <section class="hero">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <h1>Teresa pomoże Twoim rodzicom, <em>gdy Ty nie możesz odebrać.</em></h1>
+          <p class="hero-lead">Spokojny przewodnik AI po telefonie dla osób starszych. Tłumaczy prostym językiem, krok po kroku, i niczego nie klika za nich.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#dolacz">Dołącz do listy <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="text-link" href="#jak-dziala">Zobacz, jak działa</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay">
+          <div class="photo-frame">
+            <img src="assets/teresa-senior-hero.jpg" alt="Starsza kobieta w kwiecistej chuście siedzi w kuchni i ogląda zdjęcia na smartfonie">
+          </div>
+          <div class="phone phone-hero" aria-label="Podgląd aplikacji Teresa">
+            <div class="phone-shell">
+              <div class="phone-speaker"></div>
+              <div class="phone-screen">
+                <div class="app-top">
+                  <span class="app-logo"><img src="assets/logo-teresa.png" alt=""> Teresa</span>
+                  <span class="app-help"><svg class="ic" aria-hidden="true"><use href="#i-help-circle"/></svg></span>
+                </div>
+                <div class="app-greeting">
+                  <small>Dzień dobry</small>
+                  <h3>W czym mogę Ci dziś pomóc?</h3>
+                </div>
+                <div class="voice-button"><svg class="ic" aria-hidden="true"><use href="#i-microphone"/></svg></div>
+                <p class="voice-hint">Naciśnij i powiedz, czego potrzebujesz</p>
+                <div class="suggestion-card">
+                  <span class="suggestion-icon"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg></span>
+                  <span><small>Możesz powiedzieć</small>„Chcę wysłać zdjęcie”</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container trust-strip reveal">
+        <span class="trust-label">Twoja kontrola</span>
+        <ul>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Nie przejmuje telefonu</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Nie zna Twoich haseł</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Nie zapisuje kodów SMS</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg> Nie wykonuje przelewów</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section problem">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <h2>Znasz te telefony w środku dnia.</h2>
+          <p>Ty jesteś w pracy, a rodzic utknął na prostej rzeczy. To nie brak umiejętności, tylko technologia, która za rzadko mówi ludzkim językiem.</p>
+        </div>
+        <div class="problem-cloud reveal">
+          <span class="bubble bubble-1"><i><svg class="ic" aria-hidden="true"><use href="#i-hand-click"/></svg></i> Nie wiem, gdzie kliknąć</span>
+          <span class="bubble bubble-2"><i><svg class="ic" aria-hidden="true"><use href="#i-typography"/></svg></i> Za małe są litery</span>
+          <span class="bubble bubble-3"><i><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg></i> Gdzie jest mój PDF?</span>
+          <span class="bubble bubble-4"><i><svg class="ic" aria-hidden="true"><use href="#i-alert-circle"/></svg></i> Boję się, że coś zepsuję</span>
+          <span class="bubble bubble-5"><i><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></i> Jak się zalogować?</span>
+          <div class="cloud-center">
+            <span class="soft-icon"><svg class="ic" aria-hidden="true"><use href="#i-help-circle"/></svg></span>
+            <p>„Chcę tylko<br>załatwić prostą sprawę.”</p>
+          </div>
+        </div>
+        <div class="stat-band reveal">
+          <div class="stat"><b>10 mln</b><span>osób w Polsce ma ponad 60 lat</span></div>
+          <div class="stat"><b>13%</b><span>seniorów ma podstawowe umiejętności cyfrowe</span></div>
+          <div class="stat"><b>47%</b><span>seniorów ze smartfonem używa go tylko do dzwonienia</span></div>
+          <div class="stat"><b>1 na 2</b><span>seniorów zetknęło się z próbą oszustwa online</span></div>
+          <small>Dane: GUS, Eurostat i raporty o kompetencjach cyfrowych seniorów, 2024–2025.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solution" id="jak-dziala">
+      <div class="container">
+        <div class="split-heading reveal">
+          <h2>Teresa tłumaczy telefon <em>prostym językiem.</em></h2>
+          <p>Twoja mama nie musi pamiętać nazw aplikacji ani technicznych słów. Mówi tak, jak do Ciebie przez telefon.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card reveal">
+            <span class="step-number">Krok 1</span>
+            <div class="step-visual sound-wave" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <h3>Rodzic mówi własnymi słowami</h3>
+            <p>„Chcę wysłać zdjęcie do wnuczki”. To wystarczy, żeby zacząć.</p>
+          </article>
+          <article class="step-card featured reveal reveal-delay">
+            <span class="step-number">Krok 2</span>
+            <div class="step-visual intention" aria-hidden="true">
+              <span class="ring ring-a"></span><span class="ring ring-b"></span><span class="spark"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
+            </div>
+            <h3>Teresa rozumie, o co chodzi</h3>
+            <p>Zamienia zwykłe słowa na konkretny plan działania, bez żargonu.</p>
+          </article>
+          <article class="step-card reveal reveal-delay-2">
+            <span class="step-number">Krok 3</span>
+            <div class="step-visual mini-steps" aria-hidden="true">
+              <span><b>1</b></span><i></i><span><b>2</b></span><i></i><span><b>3</b></span>
+            </div>
+            <h3>I prowadzi przez kolejne kroki</h3>
+            <p>Jedna jasna wskazówka naraz, zawsze w spokojnym tempie.</p>
+          </article>
+        </div>
+
+        <div class="walkthrough reveal">
+          <div class="walkthrough-copy">
+            <h3>Jedna rzecz naraz.</h3>
+            <p>Teresa nie klika za rodzica. Pokazuje, gdzie nacisnąć, a on wykonuje każdy krok samodzielnie.</p>
+            <div class="agency-note"><span><svg class="ic" aria-hidden="true"><use href="#i-hand-click"/></svg></span><strong>Kontrola przez cały czas zostaje w rękach bliskiej osoby.</strong></div>
+          </div>
+          <div class="conversation">
+            <div class="chat user-chat"><small>Ty</small>Chcę wysłać zdjęcie do wnuczki.</div>
+            <div class="chat teresa-chat">
+              <div class="chat-brand"><img class="brand-mark tiny" src="assets/logo-teresa.png" alt=""> Teresa</div>
+              <strong>Dobrze, zrobimy to razem.</strong>
+              <p>Najpierw otwórz aplikację „Zdjęcia”. Jej ikona wygląda jak kolorowy kwiatek.</p>
+              <div class="progress"><span style="width:33%"></span></div>
+              <small>Krok 1 z 3</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="starter-tasks reveal">
+          <h3>Na start Teresa pomoże m.in.:</h3>
+          <ul class="task-chips">
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg></i> Wysłać zdjęcie</li>
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg></i> Znaleźć pobrany PDF</li>
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-typography"/></svg></i> Powiększyć litery</li>
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-bulb"/></svg></i> Włączyć latarkę</li>
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></i> Ustawić jasność ekranu</li>
+            <li><i><svg class="ic" aria-hidden="true"><use href="#i-key"/></svg></i> Przejść przez logowanie</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section safety" id="bezpieczenstwo">
+      <div class="container safety-grid">
+        <div class="safety-copy reveal">
+          <h2>Pomaga, ale nie przejmuje kontroli.</h2>
+          <p>Co drugi polski senior zetknął się już z próbą oszustwa w internecie. Teresa widzi tyle, ile potrzebuje, żeby wskazać drogę, dlatego możesz ją spokojnie zainstalować mamie czy tacie.</p>
+          <blockquote>„To przewodnik,<br>nie pilot do telefonu.”</blockquote>
+        </div>
+        <div class="safety-cards reveal reveal-delay">
+          <article><span class="line-icon"><svg class="ic" aria-hidden="true"><use href="#i-hand-stop"/></svg></span><div><h3>Nie klika za seniora</h3><p>Pokazuje, gdzie nacisnąć. Decyzja i ruch zawsze należą do niego.</p></div></article>
+          <article><span class="line-icon"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><div><h3>Nie zna haseł ani kodów</h3><p>Hasła, PIN-y i kody SMS zostają wyłącznie u właściciela telefonu.</p></div></article>
+          <article><span class="line-icon"><svg class="ic" aria-hidden="true"><use href="#i-credit-card-off"/></svg></span><div><h3>Nie dotyka pieniędzy</h3><p>Nie wykonuje przelewów ani zakupów, nawet na wyraźną prośbę.</p></div></article>
+          <article><span class="line-icon"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg></span><div><h3>Zawsze możesz przerwać</h3><p>Podpowiedzi zamkniesz w każdej chwili jednym przyciskiem.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section families" id="dla-rodzin">
+      <div class="container families-grid">
+        <div class="families-copy reveal">
+          <h2>Pomoc dla seniora. Spokój dla rodziny.</h2>
+          <p>Ty instalujesz i opłacasz, rodzic po prostu korzysta. Konfiguracja zajmuje kilka minut, a zamiast tłumaczyć ten sam ekran po raz piąty, masz pewność, że nic się nie popsuje.</p>
+          <div class="fact-note">
+            <span><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <p>W Polsce żyje około 10 milionów osób po sześćdziesiątce. Podstawowe umiejętności cyfrowe ma tylko 13% z nich, reszta prosi bliskich o pomoc albo odpuszcza.</p>
+          </div>
+        </div>
+        <div class="benefit-panels reveal reveal-delay">
+          <article class="benefit senior-benefit">
+            <span class="benefit-label">Dla seniora</span>
+            <h3>Więcej pewności<br>we własnych rękach.</h3>
+            <ul><li>Załatwia sprawy samodzielnie</li><li>Nikt go nie pogania ani nie ocenia</li><li>Uczy się przy okazji, we własnym tempie</li></ul>
+          </article>
+          <article class="benefit family-benefit">
+            <span class="benefit-label">Dla rodziny</span>
+            <h3>Wsparcie bez<br>ciągłego wyręczania.</h3>
+            <ul><li>Mniej telefonów w środku dnia pracy</li><li>Pewność, że wskazówki są bezpieczne</li><li>Prosta instalacja na telefonie rodzica</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="pytania">
+      <div class="container faq-wrap">
+        <div class="section-heading centered reveal">
+          <h2>Częste pytania.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Czy Teresa robi coś za mojego rodzica? <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p>Nie. Teresa pokazuje kolejne kroki i tłumaczy, co zrobić, ale każde kliknięcie senior wykonuje samodzielnie. Dzięki temu naprawdę uczy się obsługi telefonu, zamiast uzależniać się od pomocy.</p>
+          </details>
+          <details>
+            <summary>Czy Teresa widzi moje hasła albo kody z SMS-ów? <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p>Nie. Przy logowaniu Teresa prowadzi Cię przez proces, ale nie odczytuje, nie zapisuje i nie przechowuje haseł, PIN-ów ani kodów SMS.</p>
+          </details>
+          <details>
+            <summary>Ile będzie kosztować? <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p>Podstawowe czynności będą bezpłatne. Plan Dla rodziny będzie kosztować 19,99 zł miesięcznie, a pierwszy miesiąc jest za darmo. Wszystkie plany znajdziesz na stronie <a href="cennik.html">Cennik</a>.</p>
+          </details>
+          <details>
+            <summary>Na jakich telefonach zadziała? <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p>Przygotowujemy Teresę na najpopularniejsze smartfony. Szczegóły dotyczące wspieranych urządzeń podamy przed premierą.</p>
+          </details>
+          <details>
+            <summary>Czy mogę zainstalować Teresę rodzicowi? <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+            <p>Tak. Szykujemy prostą instalację z pomocą bliskiej osoby oraz krótką instrukcję dla rodzin, żeby pierwsze uruchomienie zajęło kilka minut.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="dolacz">
+      <div class="container cta-panel reveal">
+        <div class="cta-glow"></div>
+        <div class="cta-copy">
+          <h2>Podaruj rodzicom Teresę przed premierą.</h2>
+          <p>Zapisz się na listę oczekujących. Przed startem wyślemy Ci zaproszenie do testów i pierwszy miesiąc planu Dla rodziny za darmo.</p>
+          <a class="partner-link" href="mailto:hello@teresa.app">Współpraca i partnerstwa: hello@teresa.app</a>
+        </div>
+        <form class="waitlist-form" id="waitlist-form">
+          <div class="form-row">
+            <label>Imię<input type="text" name="name" placeholder="Twoje imię" required></label>
+            <label>E-mail<input type="email" name="email" placeholder="imie@przyklad.pl" required></label>
+          </div>
+          <label>Kim jesteś?
+            <select name="role" required>
+              <option value="" disabled selected>Wybierz odpowiedź</option>
+              <option>Senior / seniorka</option>
+              <option>Członek rodziny</option>
+              <option>Partner</option>
+              <option>Inwestor</option>
+              <option>Inna osoba</option>
+            </select>
+          </label>
+          <label class="consent"><input type="checkbox" required><span>Zgadzam się na kontakt w sprawie aplikacji Teresa.</span></label>
+          <button class="button button-primary form-submit" type="submit">Dołącz do listy <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          <p class="form-note">Żadnego spamu. Napiszemy tylko o testach i premierze.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="#top"><img class="brand-mark" src="assets/logo-teresa.png" alt=""><span>Teresa</span></a>
+        <p>Przewodnik po telefonie<br>dla osób starszych.</p>
+      </div>
+      <div class="footer-links"><span>Produkt</span><a href="#jak-dziala">Jak działa</a><a href="#bezpieczenstwo">Bezpieczeństwo</a><a href="#dla-rodzin">Dla rodzin</a><a href="cennik.html">Cennik</a><a href="#pytania">Częste pytania</a></div>
+      <div class="footer-links"><span>Kontakt</span><a href="mailto:hello@teresa.app">hello@teresa.app</a><a href="#dolacz">Lista oczekujących</a></div>
+      <div class="footer-statement">Technologia pomaga<br>tylko wtedy, gdy<br><em>jest zrozumiała.</em></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Teresa App</span><span><a href="#">Prywatność</a> · <a href="#">Warunki</a></span></div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite">
+    <span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><div><strong>Dziękujemy, jesteś na liście.</strong><small>Odezwiemy się przed premierą.</small></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
