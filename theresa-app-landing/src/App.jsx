@@ -130,8 +130,17 @@ function Hero() {
             </a>
           </div>
         </motion.div>
-        <motion.div {...enter(0.1)} className="justify-self-center md:justify-self-end">
-          <PhoneMockup />
+        <motion.div {...enter(0.1)} className="w-full max-w-[440px] justify-self-center md:justify-self-end">
+          <div className="relative">
+            <img
+              src="./pani-jasia.jpg"
+              alt="Pani Jasia korzysta z telefonu w swojej kuchni"
+              className="aspect-[4/5] w-full rounded-[32px] object-cover object-[42%_center] shadow-[0_36px_70px_-24px_rgba(16,18,20,0.35)]"
+            />
+            <div className="absolute -bottom-8 left-0 origin-bottom-left scale-[0.6] sm:-left-4 sm:scale-[0.7]">
+              <PhoneMockup />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
