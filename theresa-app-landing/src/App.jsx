@@ -302,7 +302,7 @@ function Problem() {
         <div className="relative mx-auto mt-14 h-[600px] max-w-3xl sm:mt-16 sm:h-[500px]">
           <div className="absolute left-1/2 top-1/2 grid size-[220px] -translate-x-1/2 -translate-y-1/2 place-content-center rounded-full bg-teal-whisper px-6 text-center shadow-[0_0_0_20px_rgba(227,241,241,0.45)] sm:size-[290px]">
             <span className="mx-auto mb-3 grid size-11 place-items-center rounded-full bg-white text-teal-deep sm:mb-4">
-              <Icon name="helpCircle" className="size-5" />
+              <Icon name="microphone" className="size-5" />
             </span>
             <p className="text-[18px] font-bold leading-snug tracking-[-0.01em] sm:text-[22px]">
               „Chcę tylko<br />załatwić prostą sprawę.”
