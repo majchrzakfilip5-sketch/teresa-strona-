@@ -14,6 +14,7 @@ const PATHS = {
   volume: ['M15 8a5 5 0 0 1 0 8', 'M17.7 5a9 9 0 0 1 0 14', 'M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a0.8 .8 0 0 1 1.5 .5v14a0.8 .8 0 0 1 -1.5 .5l-3.5 -4.5'],
   chevronDown: ['M6 9l6 6l6 -6'],
   arrowRight: ['M5 12l14 0', 'M13 18l6 -6', 'M13 6l6 6'],
+  helpCircle: ['M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0', 'M12 16v.01', 'M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483'],
 };
 
 function Icon({ name, className = 'size-5' }) {
@@ -277,6 +278,45 @@ function HowItWorks() {
   );
 }
 
+function Problem() {
+  const bubbles = [
+    'Nie wiem, gdzie kliknąć',
+    'Za małe są litery',
+    'Gdzie jest mój PDF?',
+    'Boję się, że coś zepsuję',
+    'Jak się zalogować?',
+  ];
+  return (
+    <section className="border-t border-black/[0.06] bg-paper py-20">
+      <div className="mx-auto max-w-3xl px-5 text-center">
+        <h2 className="text-[32px] font-extrabold tracking-[-0.02em] md:text-[44px]">
+          Znasz te telefony w środku dnia.
+        </h2>
+        <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/65">
+          Ty jesteś w pracy, a bliski utknął na prostej rzeczy. To nie brak
+          umiejętności, tylko technologia, która za rzadko mówi ludzkim językiem.
+        </p>
+        <div className="mx-auto mt-14 flex max-w-xl flex-wrap items-center justify-center gap-2.5">
+          {bubbles.map(b => (
+            <span key={b}
+              className="rounded-full border border-black/[0.08] bg-cream px-4 py-2.5 text-sm font-semibold text-ink/70">
+              {b}
+            </span>
+          ))}
+        </div>
+        <div className="mx-auto mt-9 flex w-fit max-w-sm items-center gap-3.5 rounded-2xl border border-teal/30 bg-white px-6 py-5 text-left">
+          <span className="grid size-11 shrink-0 place-items-center rounded-full bg-teal/15 text-teal-deep">
+            <Icon name="helpCircle" className="size-5" />
+          </span>
+          <p className="text-[17px] font-bold leading-snug tracking-[-0.01em]">
+            „Chcę tylko załatwić prostą sprawę.”
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Plan({ name, price, period, tagline, features, cta, href, featured = false, dimmed = false, badge }) {
   return (
     <article className={[
@@ -514,6 +554,7 @@ export default function App() {
         <Hero />
         <TrustBand />
         <HowItWorks />
+        <Problem />
         <Stats />
         <Bridge />
         <Pricing />
