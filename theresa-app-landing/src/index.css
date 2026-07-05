@@ -8,7 +8,13 @@
   --color-ink: #1C1F21;
   --color-teal: #67B3B3;
   --color-teal-deep: #2F7E7E;
+  --color-teal-whisper: #E3F1F1;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --animate-float: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% { transform: translateY(-8px); }
 }
 
 html {
@@ -34,4 +40,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .animate-float { animation: none; }
 }

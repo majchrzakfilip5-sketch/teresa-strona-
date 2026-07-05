@@ -15,6 +15,9 @@ const PATHS = {
   chevronDown: ['M6 9l6 6l6 -6'],
   arrowRight: ['M5 12l14 0', 'M13 18l6 -6', 'M13 6l6 6'],
   helpCircle: ['M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0', 'M12 16v.01', 'M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483'],
+  click: ['M3 12l3 0', 'M12 3l0 3', 'M7.8 7.8l-2.2 -2.2', 'M16.2 7.8l2.2 -2.2', 'M7.8 16.2l-2.2 2.2', 'M12 12l9 3l-4 2l-2 4l-3 -9'],
+  fileText: ['M14 3v4a1 1 0 0 0 1 1h4', 'M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z', 'M9 9l1 0', 'M9 13l6 0', 'M9 17l6 0'],
+  alertCircle: ['M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0', 'M12 8v4', 'M12 16l.01 0'],
 };
 
 function Icon({ name, className = 'size-5' }) {
@@ -280,15 +283,15 @@ function HowItWorks() {
 
 function Problem() {
   const bubbles = [
-    'Nie wiem, gdzie kliknąć',
-    'Za małe są litery',
-    'Gdzie jest mój PDF?',
-    'Boję się, że coś zepsuję',
-    'Jak się zalogować?',
+    { text: 'Nie wiem, gdzie kliknąć', icon: 'click', delay: '0s', pos: 'left-0 top-[3%] sm:left-[3%] sm:top-[14%]' },
+    { text: 'Za małe są litery', icon: 'typography', delay: '-1.5s', pos: 'right-0 top-[15%] sm:right-[2%] sm:top-[5%]' },
+    { text: 'Gdzie jest mój PDF?', icon: 'fileText', delay: '-3s', pos: 'left-0 bottom-[22%] sm:left-0 sm:bottom-[18%]' },
+    { text: 'Boję się, że coś zepsuję', icon: 'alertCircle', delay: '-2s', pos: 'right-0 bottom-[7%] sm:right-0 sm:bottom-[21%]' },
+    { text: 'Jak się zalogować?', icon: 'key', delay: '-0.7s', pos: 'bottom-0 left-1/2 -translate-x-1/2 sm:left-[57%] sm:translate-x-0' },
   ];
   return (
     <section className="border-t border-black/[0.06] bg-paper py-20">
-      <div className="mx-auto max-w-3xl px-5 text-center">
+      <div className="mx-auto max-w-4xl px-5 text-center">
         <h2 className="text-[32px] font-extrabold tracking-[-0.02em] md:text-[44px]">
           Znasz te telefony w środku dnia.
         </h2>
@@ -296,21 +299,24 @@ function Problem() {
           Ty jesteś w pracy, a bliski utknął na prostej rzeczy. To nie brak
           umiejętności, tylko technologia, która za rzadko mówi ludzkim językiem.
         </p>
-        <div className="mx-auto mt-14 flex max-w-xl flex-wrap items-center justify-center gap-2.5">
+        <div className="relative mx-auto mt-14 h-[600px] max-w-3xl sm:mt-16 sm:h-[500px]">
+          <div className="absolute left-1/2 top-1/2 grid size-[220px] -translate-x-1/2 -translate-y-1/2 place-content-center rounded-full bg-teal-whisper px-6 text-center shadow-[0_0_0_20px_rgba(227,241,241,0.45)] sm:size-[290px]">
+            <span className="mx-auto mb-3 grid size-11 place-items-center rounded-full bg-white text-teal-deep sm:mb-4">
+              <Icon name="helpCircle" className="size-5" />
+            </span>
+            <p className="text-[18px] font-bold leading-snug tracking-[-0.01em] sm:text-[22px]">
+              „Chcę tylko<br />załatwić prostą sprawę.”
+            </p>
+          </div>
           {bubbles.map(b => (
-            <span key={b}
-              className="rounded-full border border-black/[0.08] bg-cream px-4 py-2.5 text-sm font-semibold text-ink/70">
-              {b}
+            <span key={b.text} style={{ animationDelay: b.delay }}
+              className={`animate-float absolute flex items-center gap-2.5 rounded-full border border-black/[0.06] bg-white px-4 py-3 text-sm font-semibold text-ink/75 shadow-[0_15px_40px_rgba(62,51,44,0.08)] ${b.pos}`}>
+              <span className="grid size-8 shrink-0 place-items-center rounded-full bg-cream text-teal-deep">
+                <Icon name={b.icon} className="size-4" />
+              </span>
+              {b.text}
             </span>
           ))}
-        </div>
-        <div className="mx-auto mt-9 flex w-fit max-w-sm items-center gap-3.5 rounded-2xl border border-teal/30 bg-white px-6 py-5 text-left">
-          <span className="grid size-11 shrink-0 place-items-center rounded-full bg-teal/15 text-teal-deep">
-            <Icon name="helpCircle" className="size-5" />
-          </span>
-          <p className="text-[17px] font-bold leading-snug tracking-[-0.01em]">
-            „Chcę tylko załatwić prostą sprawę.”
-          </p>
         </div>
       </div>
     </section>
